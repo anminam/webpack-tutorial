@@ -102,3 +102,56 @@ module.exports = {
   }
 }
 ```
+
+## source map
+```
+devtool: 'source-map'
+```
+
+## 웹팩의 4가지 주요 속성
+- entry
+- output
+- loader
+- plugin
+
+
+### entry
+  - 진입점
+  - 자바스크립 파일 경로
+
+
+### output
+  - 결과물
+  - option
+    - filename
+    - path
+  ```
+  filename: '[name].bundle.js'
+  filename: '[id].bundle.js'
+
+  filename: '[name].[hash].bundle.js'
+
+  // 사용자가 새로고침하지않아도 알게 할 수 있는 것????
+  filename: '[chunkhash].bundle.js'
+
+  ```
+### loader
+  - 웹팩이 변환될때 중간에 스크립트파일이 아닌것들을 변환할 수있도록 도와주는 속성.
+
+### plugin
+  - 웹팩의 기본적인 동작에 추가적인 기능을 제공하는 속성.
+  - 결과물의 형태를 바꾸는 역할.
+
+## mode
+  - production
+  - development
+  - none
+
+
+# webpack-dev-server
+  - 빌드한 결과물이 파일 탐색기나 프로젝트 폴로에 보이지 않는다.
+  - 결과물은 메모리에 저장됨.
+
+  ```
+  npm i webpack-dev-server -D
+  ```
