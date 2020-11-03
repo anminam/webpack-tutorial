@@ -2,3 +2,6 @@ body {
   color: red;
   background-image: url(../images/mainimg.jpg);
 }
+.image {
+  background-image: url(../images/no_img_1000_1000.png);
+}

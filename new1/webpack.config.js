@@ -1,4 +1,5 @@
 const path = require("path");
+const MyPlugin = require("./myplugin");
 
 module.exports = {
   mode: "development",
@@ -9,17 +10,17 @@ module.exports = {
     filename: `[name].js`,
     path: path.resolve("./dist"),
   },
-
   module: {
     rules: [
       {
         test: /\.(png|jpg)$/,
         use: [
           {
-            loader: "file-loader",
+            loader: "url-loader",
             options: {
-              publicPath: "../dist",
               name: `[name].[ext]?[hash]`,
+              publicPath: "../dist",
+              limit: 10000,
             },
           },
         ],
@@ -30,4 +31,6 @@ module.exports = {
       },
     ],
   },
+
+  plugins: [new MyPlugin()],
 };
