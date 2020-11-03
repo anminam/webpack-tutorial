@@ -155,3 +155,7 @@ devtool: 'source-map'
   ```
   npm i webpack-dev-server -D
   ```
+
+
+# 웹팩 무지정리 잘돼있는 사이트
+ - https://jeonghwan-kim.github.io/series/2019/12/10/frontend-dev-env-webpack-basic.html
