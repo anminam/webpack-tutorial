@@ -6,14 +6,27 @@ module.exports = {
     main: "./src/app.js",
   },
   output: {
-    filename: "[name].js",
+    filename: `[name].js`,
     path: path.resolve("./dist"),
   },
+
   module: {
     rules: [
       {
+        test: /\.(png|jpg)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              publicPath: "../dist",
+              name: `[name].[ext]?[hash]`,
+            },
+          },
+        ],
+      },
+      {
         test: /\.css$/,
-        use: ["css-loader"],
+        use: ["style-loader", "css-loader"],
       },
     ],
   },
