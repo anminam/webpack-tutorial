@@ -1,16 +1,21 @@
-import model from "./model";
-const alert = (msg) => window.alert(msg);
+import model from "./models/model";
+const elRoot = document.querySelector("#root");
 
-console.log(model);
+elRoot.innerHTML = "asdfk";
 
-const elApp = document.querySelector("#app");
-update();
+const init = () => {
+  update();
+};
 
-async function update() {
-  const mo = await model.get();
+const update = async () => {
+  const list = await model.get();
+
   let html = "";
-  mo.forEach((element) => {
-    html += `<li>${element.keyword}</li>`;
+  list.forEach((i) => {
+    html += `<li>${i.keyword}</li>`;
   });
-  elApp.innerHTML = `<ul>${html}</ul>`;
-}
+
+  elRoot.innerHTML = html;
+};
+
+init();
