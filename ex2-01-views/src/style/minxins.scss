@@ -1,0 +1,9 @@
+@mixin btn-circle {
+  $width: 20px;
+  width: $width;
+  height: $width;
+  border-radius: 50%;
+  &:hover {
+    cursor: pointer;
+  }
+}
