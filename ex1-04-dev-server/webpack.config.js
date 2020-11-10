@@ -19,8 +19,9 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     port: 8080,
-    before: (app, server, compiler) => {
-      app.use(apiMocker("/api", "mocks/api"));
+    proxy: {
+      "/api": "http://localhost:8081",
     },
+    hot: true,
   },
 };

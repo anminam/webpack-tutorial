@@ -12,7 +12,7 @@ const update = async () => {
 
   let html = "";
   list.forEach((i) => {
-    html += `<li>${i.keyword}</li>`;
+    html += `<div>${i.keyword}</div>`;
   });
 
   elRoot.innerHTML = html;
