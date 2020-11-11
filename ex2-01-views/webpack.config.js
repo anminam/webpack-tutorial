@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -13,29 +14,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(jpg|png)$/,
-        loader: "url-loader",
-        options: {
-          name: "[name].[ext]?[hash]",
-          limit: 10000,
-        },
-      },
-      {
         test: /\.(c|sc)ss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src", "index.html"),
+      template: "./src/index.html",
     }),
   ],
   devServer: {
-    host: "localhost",
-    port: 8888,
-    proxy: {
-      "/api": "http://localhost:8081",
-    },
+    port: 8989,
+    hot: true,
   },
 };

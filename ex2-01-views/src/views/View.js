@@ -4,27 +4,7 @@ export default class View {
       throw el;
     }
 
-    this.el = el;
+    this.el;
     return this;
-  }
-
-  on(event, handler) {
-    this.el.addEventListener(event, handler);
-    return this;
-  }
-
-  emit(event, data) {
-    const eventObj = new CustomEvent(event, {
-      detail: data,
-    });
-    this.el.dispatchEvent(eventObj);
-    return this;
-  }
-
-  hide() {
-    this.el.style.display = "none";
-  }
-  show() {
-    this.el.style.display = "block";
   }
 }
