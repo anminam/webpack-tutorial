@@ -185,5 +185,7 @@ npm i webpack-dev-server -D
 # 웹팩 무지정리 잘돼있는 사이트
 
 - 김성환님
-  - https://jeonghwan-kim.github.io/series/2019/12/10/frontend-dev-env-webpack-basic.html
-- https://github.com/jeonghwan-kim/lecture-frontend-dev-env
+  - 웹팩강좌
+    - https://jeonghwan-kim.github.io/series/2019/12/10/frontend-dev-env-webpack-basic.html
+  - 예제
+    - https://github.com/jeonghwan-kim/lecture-frontend-dev-env

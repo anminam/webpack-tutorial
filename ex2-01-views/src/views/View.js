@@ -20,4 +20,11 @@ export default class View {
     this.el.dispatchEvent(eventObj);
     return this;
   }
+
+  hide() {
+    this.el.style.display = "none";
+  }
+  show() {
+    this.el.style.display = "block";
+  }
 }

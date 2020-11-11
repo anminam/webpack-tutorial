@@ -34,4 +34,8 @@ export default class FormView extends View {
     if (keyValue === KEYCODE_ENTER) return;
     this.emit("@submit", { input: inputValue });
   }
+  setValue(str) {
+    this._inputEl.value = str;
+    this.showResetButton(str.length);
+  }
 }

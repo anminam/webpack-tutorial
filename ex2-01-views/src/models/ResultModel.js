@@ -2,6 +2,10 @@ import _req from "./request";
 
 export default {
   async get() {
-    return await _req("get", "/api/search");
+    try {
+      return await _req("get", "/api/search");
+    } catch (error) {
+      throw error;
+    }
   },
 };

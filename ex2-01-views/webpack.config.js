@@ -13,6 +13,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(jpg|png)$/,
+        loader: "url-loader",
+        options: {
+          name: "[name].[ext]?[hash]",
+          limit: 10000,
+        },
+      },
+      {
         test: /\.(c|sc)ss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
