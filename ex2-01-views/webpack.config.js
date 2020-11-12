@@ -17,6 +17,17 @@ module.exports = {
         test: /\.(c|sc)ss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
+      {
+        test: /\.(png|jpg)$/,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 10000,
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -28,5 +39,8 @@ module.exports = {
   devServer: {
     port: 8989,
     hot: true,
+    proxy: {
+      api: "http://localhost:8081",
+    },
   },
 };
