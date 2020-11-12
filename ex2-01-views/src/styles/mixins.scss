@@ -1,8 +1,0 @@
-@import "./var.scss";
-
-@mixin btn-circle {
-  cursor: pointer;
-  width: $btn-circle-size;
-  height: $btn-circle-size;
-  border-radius: 50%;
-}
