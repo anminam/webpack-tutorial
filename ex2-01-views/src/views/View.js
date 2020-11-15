@@ -17,6 +17,7 @@ export default class View {
 
   on(event, callback) {
     this.el.addEventListener(event, callback);
+    return this;
   }
 
   emit(event, data) {

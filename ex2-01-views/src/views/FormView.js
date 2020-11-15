@@ -1,4 +1,5 @@
 import View from "./View";
+import "./FormView.scss";
 export default class FormView extends View {
   constructor(el) {
     super(el);
@@ -7,6 +8,9 @@ export default class FormView extends View {
 
     this._inputEl.addEventListener("keyup", (e) => {
       this.onKeyup();
+    });
+    this.on("submit", (e) => {
+      e.preventDefault();
     });
   }
 
