@@ -11,6 +11,8 @@ export default class FormView extends View {
     });
     this.on("submit", (e) => {
       e.preventDefault();
+      const value = this._inputEl.value;
+      this.emit("@submit", value);
     });
   }
 
